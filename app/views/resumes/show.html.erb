@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resume.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @resume.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @resume.phone %>
+</p>
+
+<p>
+  <strong>Reffered by:</strong>
+  <%= @resume.reffered_by %>
+</p>
+
+<p>
+  <strong>What do you like:</strong>
+  <%= @resume.what_do_you_like %>
+</p>
+
+<p>
+  <strong>Willing to relocate:</strong>
+  <%= @resume.willing_to_relocate %>
+</p>
+
+<p>
+  <strong>Preferred location:</strong>
+  <%= @resume.preferred_location %>
+</p>
+
+<p>
+  <strong>Experience in years:</strong>
+  <%= @resume.experience_in_years %>
+</p>
+
+<p>
+  <strong>Experience in months:</strong>
+  <%= @resume.experience_in_months %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @resume.level %>
+</p>
+
+<p>
+  <strong>Industry:</strong>
+  <%= @resume.industry %>
+</p>
+
+<p>
+  <strong>Additional industry:</strong>
+  <%= @resume.additional_industry %>
+</p>
+
+<p>
+  <strong>Function:</strong>
+  <%= @resume.function %>
+</p>
+
+<p>
+  <strong>Linkedin link:</strong>
+  <%= @resume.linkedin_link %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @resume.resume %>
+</p>
+
+<%= link_to 'Edit', edit_resume_path(@resume) %> |
+<%= link_to 'Back', resumes_path %>

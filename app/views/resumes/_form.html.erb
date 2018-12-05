@@ -1,0 +1,92 @@
+<%= form_with(model: resume, local: true) do |form| %>
+  <% if resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% resume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :resume_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :resume_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :resume_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reffered_by %>
+    <%= form.text_field :reffered_by, id: :resume_reffered_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :what_do_you_like %>
+    <%= form.text_field :what_do_you_like, id: :resume_what_do_you_like %>
+  </div>
+
+  <div class="field">
+    <%= form.label :willing_to_relocate %>
+    <%= form.text_field :willing_to_relocate, id: :resume_willing_to_relocate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferred_location %>
+    <%= form.text_field :preferred_location, id: :resume_preferred_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experience_in_years %>
+    <%= form.text_field :experience_in_years, id: :resume_experience_in_years %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experience_in_months %>
+    <%= form.text_field :experience_in_months, id: :resume_experience_in_months %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.text_field :level, id: :resume_level %>
+  </div>
+
+  <div class="field">
+    <%= form.label :industry %>
+    <%= form.text_field :industry, id: :resume_industry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_industry %>
+    <%= form.text_field :additional_industry, id: :resume_additional_industry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :function %>
+    <%= form.text_field :function, id: :resume_function %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin_link %>
+    <%= form.text_field :linkedin_link, id: :resume_linkedin_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resume %>
+    <%= form.text_field :resume, id: :resume_resume %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
