@@ -15,6 +15,8 @@ class ResumesController < ApplicationController
   # GET /resumes/new
   def new
     @resume = Resume.new
+    @resume.educations.new
+    @resume.experiences.new
   end
 
   # GET /resumes/1/edit

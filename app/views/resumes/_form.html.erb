@@ -36,6 +36,26 @@
     <%= form.text_field :what_do_you_like, id: :resume_what_do_you_like %>
   </div>
 
+  <h3>Educations</h3>
+  <div id='tasks'>
+    <%= form.fields_for :educations do |education| %>
+      <%= render 'education_fields', f: education %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add education', form, :educations %>
+    </div>
+  </div>
+
+  <h3>Qualifications</h3>
+  <div id='tasks'>
+    <%= form.fields_for :experiences do |experience| %>
+      <%= render 'experience_fields', f: experience %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add experience', form, :experiences %>
+    </div>
+  </div>
+
   <div class="field">
     <%= form.label :willing_to_relocate %>
     <%= form.text_field :willing_to_relocate, id: :resume_willing_to_relocate %>
