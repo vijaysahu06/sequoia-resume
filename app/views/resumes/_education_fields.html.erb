@@ -1,17 +1,17 @@
 <div class='nested-fields'>
   <div class="field">
     <%= f.label :university %>
-    <%= f.text_field :university %>
+    <%= f.text_field :university, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :qualification %>
-    <%= f.text_field :qualification %>
+    <%= f.text_field :qualification, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :year %>
-    <%= f.number_field :year %>
+    <%= f.number_field :year, class: 'form-control' %>
   </div>
 
   <%= link_to_remove_association "remove education", f %>
