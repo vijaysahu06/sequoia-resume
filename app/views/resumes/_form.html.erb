@@ -58,7 +58,7 @@
 
   <div class="field">
     <%= form.label :willing_to_relocate %>
-    <%= form.text_field :willing_to_relocate, id: :resume_willing_to_relocate, class: 'form-control' %>
+    <%= form.select :willing_to_relocate, options_for_select(Resume::WILLING_TO_RELOCATE, form.object.willing_to_relocate), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -78,22 +78,22 @@
 
   <div class="field">
     <%= form.label :level %>
-    <%= form.text_field :level, id: :resume_level, class: 'form-control' %>
+    <%= form.select :level, options_for_select(Resume::LEVELS, form.object.level), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :industry %>
-    <%= form.text_field :industry, id: :resume_industry, class: 'form-control' %>
+    <%= form.select :industry, options_for_select(Resume::INDUSTRY, form.object.industry), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :additional_industry %>
-    <%= form.text_field :additional_industry, id: :resume_additional_industry, class: 'form-control' %>
+    <%= form.select :additional_industry, options_for_select(Resume::ADDITIONAL_INDUSTRY, form.object.additional_industry), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :function %>
-    <%= form.text_field :function, id: :resume_function, class: 'form-control' %>
+    <%= form.select :function, options_for_select(Resume::FUNCTIONS, form.object.function), {}, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -105,7 +105,7 @@
     <%= form.label :resume %>
     <%= form.text_field :resume, id: :resume_resume, class: 'form-control' %>
   </div>
-
+  <br>
   <div class="actions">
     <%= form.submit 'Submit', class: 'form-control' %>
   </div>

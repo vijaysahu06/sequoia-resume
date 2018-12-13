@@ -1,55 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Resumes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Reffered by</th>
-      <th>What do you like</th>
-      <th>Willing to relocate</th>
-      <th>Preferred location</th>
-      <th>Experience in years</th>
-      <th>Experience in months</th>
-      <th>Level</th>
-      <th>Industry</th>
-      <th>Additional industry</th>
-      <th>Function</th>
-      <th>Linkedin link</th>
-      <th>Resume</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resumes.each do |resume| %>
-      <tr>
-        <td><%= resume.name %></td>
-        <td><%= resume.email %></td>
-        <td><%= resume.phone %></td>
-        <td><%= resume.reffered_by %></td>
-        <td><%= resume.what_do_you_like %></td>
-        <td><%= resume.willing_to_relocate %></td>
-        <td><%= resume.preferred_location %></td>
-        <td><%= resume.experience_in_years %></td>
-        <td><%= resume.experience_in_months %></td>
-        <td><%= resume.level %></td>
-        <td><%= resume.industry %></td>
-        <td><%= resume.additional_industry %></td>
-        <td><%= resume.function %></td>
-        <td><%= resume.linkedin_link %></td>
-        <td><%= resume.resume %></td>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="row resumes">
+  <% @resumes.each do |resume| %>
+    <div class="col-md-4 resume">
+      <div class="name">
+        <%= resume.name %>
+      </div>
+      <div class="title">
+        <%= resume.experiences.current.title %>
+        <span class="experience">
+          <%= resume.total_experience %>
+        </span>
+      </div>
+      <div class="info">
+        <%= "Works at #{resume.experiences.current.company} in #{resume.experiences.current.location}" %>  
+      </div>
+      <div class="education">
+        <%= "Have done #{resume.educations.highest.qualification} from #{resume.educations.highest.university}" %>  
+      </div>
+      <div class="linkedin">
+        <%= resume.linkedin_link %>
+      </div>
+      <div class="actions">
+        <%#= link_to 'Show', resume %>
+        <%= link_to 'Edit', edit_resume_path(resume) %>
+        <%#= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Resume', new_resume_path %>
