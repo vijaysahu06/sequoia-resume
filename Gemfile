@@ -38,6 +38,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'bootstrap', '~> 4.1.3'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'active_model_serializers'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

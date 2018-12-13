@@ -26,3 +26,7 @@ default: &default
 development:
   <<: *default
   database: sequoia_resumes_development
+
+production:
+  <<: *default
+  database: sequoia_resumes_production
