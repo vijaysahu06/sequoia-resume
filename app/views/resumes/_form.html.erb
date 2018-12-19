@@ -103,7 +103,8 @@
 
   <div class="field">
     <%= form.label :resume %>
-    <%= form.text_field :resume, id: :resume_resume, class: 'form-control' %>
+    <%#= form.text_field :resume, id: :resume_resume, class: 'form-control' %>
+    <%= form.filestack_field :resume, 'Upload Your Avatar!', id: 'unique-id', input_id: 'unique-input-id' %>
   </div>
   <br>
   <div class="actions">

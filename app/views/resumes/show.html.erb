@@ -74,6 +74,7 @@
   <strong>Resume:</strong>
   <%= @resume.resume %>
 </p>
+<%#= filestack_image @resume.resume, transform: filestack_transform.resize(width:100, height:100).flip.enhance %>
 
 <%= link_to 'Edit', edit_resume_path(@resume) %> |
 <%= link_to 'Back', resumes_path %>
