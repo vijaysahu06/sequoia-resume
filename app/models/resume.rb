@@ -4,6 +4,11 @@ class Resume < ApplicationRecord
   accepts_nested_attributes_for :educations, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
 
+  validates_presence_of :name
+  validates_presence_of :phone
+  validates_presence_of :upload_resume_or_linkedin_link
+  scope :all_approved, ->{ where(approved: true) }
+
   #LEVELS = ["Higher Management", "Mid Management", "Others"]
   LEVELS = ["Founder / CEO","Board","CXO","VP","Director","Manager","Individual Contributor"]
   FUNCTIONS=[
@@ -53,6 +58,14 @@ class Resume < ApplicationRecord
    
                          ]
   WILLING_TO_RELOCATE = ["Yes", "No", "May be"]
+
+  def upload_resume_or_linkedin_link
+    if (self.linkedin_link.present? || self.upload_resume.present?)
+      return true
+    else
+      errors.add(:linkedin_link, " or Upload Resume, can't be blank! Must provide any one of this.")
+    end
+  end
 
   def total_experience
     "#{experience_in_years} years and #{experience_in_months} months"

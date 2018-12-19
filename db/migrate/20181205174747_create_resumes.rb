@@ -16,6 +16,7 @@ class CreateResumes < ActiveRecord::Migration[5.1]
       t.string :function
       t.string :linkedin_link
       t.string :resume
+      t.boolean :approved
 
       t.timestamps
     end
