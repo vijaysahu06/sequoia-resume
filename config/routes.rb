@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :resumes
-  root 'welcome#index'
 
+  root 'resumes#new'
+  resources :resumes
 
   namespace :api do
     resources :resumes, only: [:index]

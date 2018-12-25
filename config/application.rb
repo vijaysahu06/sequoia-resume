@@ -22,9 +22,3 @@ module SequoiaResumes
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-    
-# filestack_key: 
-# "AzaS8QJ9iQu2WPvvAKv5Nz"
-
-# filestack_secret: 
-# "JSAWFFSR6VB3NL3WXSLC3BTP5A"

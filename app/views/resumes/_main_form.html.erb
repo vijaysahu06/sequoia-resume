@@ -1,0 +1,129 @@
+<%= form_with(model: resume, local: true) do |form| %>
+  <% if resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% resume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :resume_name, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :resume_email, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :resume_phone, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reffered_by %>
+    <%= form.text_field :reffered_by, id: :resume_reffered_by, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :what_do_you_like %>
+    <%= form.text_field :what_do_you_like, id: :resume_what_do_you_like, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :willing_to_relocate %>
+    <br>
+    <% Resume::WILLING_TO_RELOCATE.each do |relocate, index| %>
+      <%= radio_button_tag "resume[willing_to_relocate]", relocate %>
+      <%= label_tag relocate %>
+      <br>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferred_location %>
+    <%= form.text_field :preferred_location, id: :resume_preferred_location, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experience_in_years %>
+    <%= form.text_field :experience_in_years, id: :resume_experience_in_years, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experience_in_months %>
+    <%= form.text_field :experience_in_months, id: :resume_experience_in_months, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "What job level are you looking for?" %>
+    <br>
+    <% Resume::LEVELS.each_with_index do |level, index| %>
+      <%= check_box_tag "resume[level][]", level %>
+      <%= label_tag level %>
+      <br>
+    <% end  %>
+  </div>
+<!-- What kind of job are you targeting? -->
+<!-- What is your ideal company size? -->
+<!-- Where are you looking to be geographically located? -->
+<!-- Deadline -->
+
+
+  <div class="field">
+    <%= form.label :industry %>
+    <%= form.select :industry, options_for_select(Resume::INDUSTRY, form.object.industry), {}, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_industry %>
+    <%= form.select :additional_industry, options_for_select(Resume::ADDITIONAL_INDUSTRY, form.object.additional_industry), {}, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :function %>
+    <%= form.select :function, options_for_select(Resume::FUNCTIONS, form.object.function), {}, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin_link %>
+    <%= form.text_field :linkedin_link, id: :resume_linkedin_link, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resume %>
+    <%#= form.text_field :resume, id: :resume_resume, class: 'form-control' %>
+    <%= form.filestack_field :resume, 'Upload Your Resume!', id: 'unique-id', input_id: 'unique-input-id' %>
+  </div>
+
+  <h3>Educations</h3>
+  <div id='educations'>
+    <%= form.fields_for :educations do |education| %>
+      <%= render 'education_fields', f: education %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add education', form, :educations %>
+    </div>
+  </div>
+
+  <h3>Qualifications</h3>
+  <div id='experiences'>
+    <%= form.fields_for :experiences do |experience| %>
+      <%= render 'experience_fields', f: experience %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add experience', form, :experiences %>
+    </div>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= form.submit 'Submit', class: 'form-control' %>
+  </div>
+<% end %>

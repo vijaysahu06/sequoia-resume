@@ -1,5 +1,29 @@
-<h1>New Resume</h1>
+<div class="page-content">
+  <div class="top-section">
+    <div class="content">
+      <span>
+        Tell us about yourself
+        <br>
+        We'll handle the rest
+      </span>
+      <p>
+        We'll find matches for you in the network of Sequoia companies. Respond if you're interested. No Recruiter Spam. No hassles.
+      </p>
 
-<%= render 'form', resume: @resume %>
+      <%= image_tag "/assets/resume-page.png" %>
 
-<%= link_to 'Back', resumes_path %>
+      <p>
+        Get notified by the hiring team or directly from founders when an open role matches your profile.
+      </p>
+    </div>
+  </div>
+
+  <h1>Get Started</h1>
+
+  <div class="form-section">   
+    <div class="title">
+      <h2>Profile Information</h2>
+    </div> 
+    <%= render 'main_form', resume: @resume %>
+  </div>
+</div>

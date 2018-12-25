@@ -10,10 +10,10 @@ class CreateResumes < ActiveRecord::Migration[5.1]
       t.string :preferred_location
       t.integer :experience_in_years
       t.integer :experience_in_months
-      t.string :level
-      t.string :industry
-      t.string :additional_industry
-      t.string :function
+      t.string :level, array: true, default: []
+      t.string :industry, array: true, default: []
+      t.string :additional_industry, array: true, default: []
+      t.string :function, array: true, default: []
       t.string :linkedin_link
       t.string :resume
       t.boolean :approved

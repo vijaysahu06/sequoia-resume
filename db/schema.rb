@@ -40,19 +40,20 @@ ActiveRecord::Schema.define(version: 20181205181014) do
   create_table "resumes", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "phone"
+    t.bigint "phone"
     t.string "reffered_by"
     t.string "what_do_you_like"
-    t.string "willing_to_relocate"
+    t.boolean "willing_to_relocate"
     t.string "preferred_location"
-    t.string "experience_in_years"
-    t.string "experience_in_months"
-    t.string "level"
-    t.string "industry"
-    t.string "additional_industry"
-    t.string "function"
+    t.integer "experience_in_years"
+    t.integer "experience_in_months"
+    t.string "level", default: [], array: true
+    t.string "industry", default: [], array: true
+    t.string "additional_industry", default: [], array: true
+    t.string "function", default: [], array: true
     t.string "linkedin_link"
     t.string "resume"
+    t.boolean "approved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

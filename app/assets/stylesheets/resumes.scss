@@ -28,3 +28,66 @@
     margin: 10px 5px;
   }
 }
+
+.page-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 100px;
+  margin-bottom: 90px;
+  padding-top: 100px;
+
+  .top-section {
+    .content {
+      text-align: center;
+      span {
+        font-size: 2.1875em;
+        line-height: 1.28571em;
+        font-weight: 700;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 90px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #8a8c8c;
+      }
+      img {
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+  h1 {
+    margin-left: 15px;
+    font-family: "Gotham SSm A","Gotham SSm B",Helvetica,Arial,"Microsoft Yahei",SimSun;
+    font-weight: 200;
+    color: #2d292a;
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.8;      
+  }
+
+  .form-section {
+    .title {
+      padding-top: 20px;
+      padding-bottom: 20px
+    }
+    .title h2 {
+      font-size: 1.5em;
+    }
+    .field {
+      padding: 15px 5px;
+      label {
+        font-weight: bold;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid;
+        border-color: gainsboro;
+      }
+    }
+  }
+}
