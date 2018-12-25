@@ -60,7 +60,7 @@ class Resume < ApplicationRecord
   WILLING_TO_RELOCATE = ["Yes", "No", "May be"]
 
   def upload_resume_or_linkedin_link
-    if (self.linkedin_link.present? || self.upload_resume.present?)
+    if (self.linkedin_link.present? || self.resume.present?)
       return true
     else
       errors.add(:linkedin_link, " or Upload Resume, can't be blank! Must provide any one of this.")
